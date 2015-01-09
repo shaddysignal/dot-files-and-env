@@ -11,9 +11,15 @@ set tabstop=3
 set smarttab
 set noexpandtab
 set autoindent
+set incsearch
 set hlsearch
 set list
-colorscheme torte
+
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
+
+let g:airline_powerline_fonts=1
 
 " allow unsaved background buffers
 set hidden
@@ -47,4 +53,4 @@ autocmd FIleType ruby,eruby let g:rubycomplete_classes_in_global=1
 hi Pmenu ctermbg=238 gui=bold
 
 " Status line with ruby version for ruby files
-autocmd FileType ruby,eruby set statusline=%t%{rvm#statusline()}%m
+" autocmd FileType ruby,eruby set statusline=%t%{rvm#statusline()}%m
