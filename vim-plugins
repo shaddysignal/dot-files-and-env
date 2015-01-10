@@ -1,13 +1,13 @@
-vim-airline - https://github.com/bling/vim-airline
-vim-bundler - https://github.com/tpope/vim-bundler
-vim-clojure-static - https://github.com/guns/vim-clojure-static
-vim-coffee-script - https://github.com/tpope/vim-coffee-script
-vim-colors-solarized - https://github.com/altercation/vim-colors-solarized
-vim-cucumber - https://github.com/tpope/vim-cucumber
-vim-endwise - https://github.com/tpope/vim-endwise
-vim-fireplace - https://github.com/tpope/vim-fireplace
-vim-haml - https://github.com/tpope/vim-haml
-vim-leiningen - https://github.com/tpope/vim-leiningen.git
-vim-rails - https://github.com/tpope/vim-rails
-vim-ruby - https://github.com/vim-ruby/vim-ruby
-vim-sensible - https://github.com/tpope/vim-sensible.git
+vim-airline https://github.com/bling/vim-airline
+vim-bundler https://github.com/tpope/vim-bundler
+vim-clojure-static https://github.com/guns/vim-clojure-static
+vim-coffee-script https://github.com/tpope/vim-coffee-script
+vim-colors-solarized https://github.com/altercation/vim-colors-solarized
+vim-cucumber https://github.com/tpope/vim-cucumber
+vim-endwise https://github.com/tpope/vim-endwise
+vim-fireplace https://github.com/tpope/vim-fireplace
+vim-haml https://github.com/tpope/vim-haml
+vim-leiningen https://github.com/tpope/vim-leiningen.git
+vim-rails https://github.com/tpope/vim-rails
+vim-ruby https://github.com/vim-ruby/vim-ruby
+vim-sensible https://github.com/tpope/vim-sensible.git
