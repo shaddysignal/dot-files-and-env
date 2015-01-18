@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [[ "$1" = "" ]]; then
+	echo 'specify package name'
+	exit 1
+fi
+
+tar_name=$1.tar.gz
+
+curl -s https://aur.archlinux.org/packages/${1:0:2}/$1/$tar_name -o $tar_name
+
+tar -tzf $tar_name > /dev/null 2>&1
+if [[ $? -ne 0  ]]; then
+	echo 'download failed. Exiting...'
+	rm -f $tar_name
+	exit 1
+fi
+
+tar xvf $tar_name
+rm -f $tar_name
