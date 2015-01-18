@@ -1,3 +1,5 @@
+[[ -e ~/.zshrc.head ]] && source ~/.zshrc.head
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -20,7 +22,7 @@ CASE_SENSITIVE="true"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -63,13 +65,13 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -77,11 +79,8 @@ export EDITOR='nvim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Recommened by zsh-syntax-highlighting-syntax package
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias zshconfig="vim ~/.zshrc"
 
 ZSH_THEME_DELIMITER="%{$fg[red]%}|%{$reset_color%}"
 
@@ -97,4 +96,4 @@ ZSH_THEME_RVM_PROMPT_SUFFIX="%{$reset_color%}"
 
 PROMPT='%n$ZSH_THEME_DELIMITER%{$fg[cyan]%}%1~%{$reset_color%}$(ruby_prompt_info)$(git_prompt_info)%{$fg[cyan]%} $(echo \\u2907)%{$reset_color%} '
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -e ~/.zshrc.tail ]] && source ~/.zshrc.tail

@@ -1,6 +1,5 @@
-if [ -n "$DESKTOP_SESSION" ]; then
-	eval $(gnome-keyring-daemon --start)
-	export SSH_AUTH_SOCK
-fi
+[[ -e ~/.zshenv.head ]] && source ~/.zshenv.head
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Fill something common here
+
+[[ -e ~/.zshenv.tail ]] && source ~/.zshenv.tail
