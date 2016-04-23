@@ -1,4 +1,4 @@
 dot-vim-and-bash-files
 ======================
 
-for boost create enviroment on new machine
+Repo for boosting creation of new machine enviroment
