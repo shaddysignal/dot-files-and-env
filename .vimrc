@@ -9,7 +9,7 @@ set nu
 set shiftwidth=3
 set tabstop=3
 set smarttab
-set noexpandtab
+set expandtab
 set autoindent
 set incsearch
 set hlsearch
@@ -40,7 +40,7 @@ set wildmenu
 let mapleader=","
 set timeout timeoutlen=1000 ttimeoutlen=1000
 
-autocmd FileType javascript set ai sw=4 sts=4 et
+autocmd FileType javascript set ai sw=2 sts=2 et
 
 autocmd FileType ruby,haml,sass,coffee,cucumber,yaml set ai sw=2 sts=2 et
 
@@ -54,3 +54,44 @@ hi Pmenu ctermbg=238 gui=bold
 
 " Status line with ruby version for ruby files
 " autocmd FileType ruby,eruby set statusline=%t%{rvm#statusline()}%m
+
+" What is this? Variables from rainbow_parentheses plugin
+" What they mean? I don't know
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkgray',    'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+" always on
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" Variables for ctrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)|node_modules$'
+
+" From http://damienradtke.com/vim-view-rustdoc
+let s:pathsep = ':' | let s:sep = '/'
+for p in split(&rtp, ',')
+	let $PATH .= s:pathsep . p . s:sep . 'tools'
+endfor
+
+" From https://github.com/kchmck/vim-coffee-script
+" autocmd BufWritePost *.coffee silent make
