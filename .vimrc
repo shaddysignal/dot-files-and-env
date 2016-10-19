@@ -15,6 +15,11 @@ set incsearch
 set hlsearch
 set list
 
+" Kind of home and end keys (Ctrl-a and Ctrl-e respectivly), only in insert
+" modes
+imap <C-a> <C-o>^
+imap <C-e> <C-o>$
+
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
