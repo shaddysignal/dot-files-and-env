@@ -1,6 +1,32 @@
 " All hail pathogen
-execute pathogen#infect()
-execute pathogen#helptags()
+"execute pathogen#infect()
+"execute pathogen#helptags()
+
+" --------- Vim Plug ---------
+call plug#begin('~/.vim/plugged')
+
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-bundler'
+Plug 'mtscout6/vim-cjsx'
+Plug 'kchmck/vim-coffee-script'
+Plug 'altercation/vim-colors-solarized'
+Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tfnico/vim-gradle'
+Plug 'mattreduce/vim-mix'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-sensible'
+Plug 'derekwyatt/vim-sbt'
+
+call plug#end()
+" ----------------------------
 
 syntax on
 filetype plugin indent on
@@ -25,6 +51,31 @@ colorscheme solarized
 let g:solarized_termcolors=256
 
 let g:airline_powerline_fonts=1
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+
+" OmniCompletion
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType elixir setlocal omnifunc=elixircomplete#Complete
+
+" Elm autocomplete
+call neocomplete#util#set_default_dictionary(
+  \ 'g:neocomplete#sources#omni#input_patterns',
+  \ 'elm',
+  \ '\.')
+
+" Elm syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
+let g:elm_syntastic_show_warnings = 1
 
 " allow unsaved background buffers
 set hidden
