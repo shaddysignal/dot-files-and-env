@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+IMAGE=/tmp/screen-lock.png
+SCREENSHOT="scrot -z $IMAGE"
+
+BLURTYPE="2x8"
+
+$SCREENSHOT
+
+convert $IMAGE -scale 10% -scale 1000% -fill black -colorize 20% $IMAGE
+i3lock -i $IMAGE
+rm $IMAGE
